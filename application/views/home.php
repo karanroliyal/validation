@@ -26,7 +26,7 @@ include_once "templates/header.php";
 
                     <div class="row">
 
-                    
+
 
 
                         <div class="mb-3 col-md-3">
@@ -41,7 +41,7 @@ include_once "templates/header.php";
                         </div>
                         <div class="mb-3 col-md-3">
                             <label for="passwordId" class="form-label">Password</label>
-                            <input type="text" id="passwordId" class="form-control" name="password" maxlength="15">
+                            <input type="password" id="passwordId" class="form-control" name="password" maxlength="15">
                             <small class="text-danger error"></small>
                         </div>
                         <div class="mb-3 col-md-3">
@@ -51,16 +51,16 @@ include_once "templates/header.php";
                         </div>
                         <div class="mb-3 col-md-3">
                             <label for="imageId" class="form-label">Profile image</label>
-                            <input type="file" id="imageId" class="form-control" name="image"  accept=".jpg, .jpeg, .png, .gif">
-                            <small class="text-danger error image-error"></small>
+                            <input type="file" id="imageId" class="form-control" name="image" accept=".jpg, .jpeg, .png, .gif">
+                            <small class="text-danger error"></small>
                         </div>
                         <div class="mb-3 col-md-3">
                             <label class="form-label">Gender</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender[]" value="male" >Male
+                                <input class="form-check-input" type="radio" name="gender[]" value="male">Male
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender[]" value="female" >Female
+                                <input class="form-check-input" type="radio" name="gender[]" value="female">Female
                             </div>
                             <small class="text-danger error"></small>
                         </div>
@@ -78,12 +78,20 @@ include_once "templates/header.php";
                             <small class="text-danger error"></small>
                         </div>
 
-                        <input type="hidden" id="userId" >
-                    <input type="hidden" name="table" value="student" >
+                        <input type="hidden" id="userId" name="id">
+                        <input type="hidden" name="table" value="student">
+                        <input type="hidden" name="upload-path-of-image" value="./profile">
 
-                </div>
-                <button type="button" class="add-user btn btn-success" onclick="sendData()" >Add user</button>
-                <button type="button" class="update-user d-none btn btn-success">Update user</button>
+                        <!-- Backend Alerts  -->
+                        <div class="alert alert-success my-backend-success d-none" style="position: absolute;width: 35%;right: 10px; top:10px" role="alert">
+                        </div>
+                        <div class="alert alert-danger my-backend-error d-none" style="position: absolute;width: 35%;right: 10px; top:10px" role="alert">
+                        </div>
+                        <!-- Backend Alerts  -->
+
+                    </div>
+                    <button type="button" class="add-user btn btn-success" onclick="sendData()">Add user</button>
+                    <button type="button" class="update-user d-none btn btn-success">Update user</button>
 
 
                 </form>
